@@ -20,6 +20,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
           background: category.name === selectedCategory && "#FC1503",
           color: "white",
         }}
+        
         key={category.name}
       >
         <span style={{ color: category.name === selectedCategory ? "white" : "red", marginRight: "15px" }}>
