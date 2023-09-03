@@ -13,9 +13,11 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    // this api call is for  the specific video
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
       .then((data) => setVideoDetail(data.items[0]))
 
+    // this api call is for realted videos
     fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
       .then((data) => setVideos(data.items))
   }, [id]);
